@@ -9,7 +9,7 @@ def generate_color_map():
 
 def print_color_map(color_map):
     for number, major_color,minor_color in color_map:
-         print(f'{number} | {major_color} | {minor_color}')
+         print(f'{number+1} | {major_color} | {minor_color}')
 
 color_map = generate_color_map()
 print_color_map(color_map)

@@ -13,5 +13,5 @@ def print_color_map(color_map):
 
 color_map = generate_color_map()
 result = print_color_map(color_map)
-assert(color_map == 25)
+assert(len(color_map) == 25)
 print("All is well (maybe!)\n")

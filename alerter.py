@@ -23,5 +23,6 @@ def alert_in_celcius(farenheit):
 
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
+assert(network_alert_stub(204.2)==500)
 print(f'{alert_failure_count} alerts failed.')
 print('All is well (maybe!)')

@@ -18,11 +18,17 @@ def alert_in_celcius(farenheit):
         # However, this code doesn't count failures!
         # Add a test below to catch this bug. Alter the stub above, if needed.
         global alert_failure_count
-        alert_failure_count += 1
+        alert_failure_count += 0
 
 
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
 assert(network_alert_stub(204.2)==500)
-print(f'{alert_failure_count} alerts failed.')
 print('All is well (maybe!)')
+print(f'{alert_failure_count} alerts failed.')
+@patch('network_alert_stub')
+def test_alert_failure_count_increment(mock_network_alert):
+    mock_network_alert.return_value = 500
+    alert_in_celcius(100)
+    self.assertEqual(alert_failure_count, 1)
+

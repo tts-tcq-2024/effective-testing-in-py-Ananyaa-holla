@@ -5,6 +5,7 @@ def generate_color_map():
     for i, major in enumerate(major_colors):
         for j, minor in enumerate(minor_colors):
             color_map_list.append((i * 5 + j, major, minor))
+    print(color_map_list)
     return color_map_list
 
 def print_color_map(color_map):

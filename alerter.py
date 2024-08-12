@@ -32,5 +32,5 @@ print(f'{alert_failure_count} alerts failed.')
 def test_alert_failure_count_increment(mock_network_alert):
     mock_network_alert.return_value = 500
     alert_in_celcius(100)
-    self.assertEqual(alert_failure_count, 1)
+    assert(alert_failure_count==1)
 

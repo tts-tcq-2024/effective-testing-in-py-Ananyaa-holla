@@ -1,3 +1,5 @@
+import unittest
+from unittest.mock import patch
 alert_failure_count = 0
 
 def network_alert_stub(celcius):

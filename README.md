@@ -6,6 +6,7 @@ Testing = Specifying the output - drives us to decompose better.
 
 
 
+
 ## Make the tests fail
 
 This exercise has a set of buggy implementations. The implementations also have tests (asserts) which pass, despite the bugs. They are 'weak' tests. Such tests are ineffective - you will need to manually check the code anyway.

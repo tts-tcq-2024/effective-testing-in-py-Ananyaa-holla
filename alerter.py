@@ -1,3 +1,5 @@
+import unittest
+from unittest.mock import patch
 alert_failure_count = 0
 
 def network_alert_stub(celcius):
@@ -5,6 +7,8 @@ def network_alert_stub(celcius):
     # Return 200 for ok
     # Return 500 for not-ok
     # stub always succeeds and returns 200
+    if celcius>200:
+        return 500
     return 200
 
 def alert_in_celcius(farenheit):
@@ -21,5 +25,12 @@ def alert_in_celcius(farenheit):
 
 alert_in_celcius(400.5)
 alert_in_celcius(303.6)
-print(f'{alert_failure_count} alerts failed.')
+assert(network_alert_stub(204.2)==500)
 print('All is well (maybe!)')
+print(f'{alert_failure_count} alerts failed.')
+@patch('network_alert_stub')
+def test_alert_failure_count_increment(mock_network_alert):
+    mock_network_alert.return_value = 500
+    alert_in_celcius(100)
+    assert(alert_failure_count==1)
+
